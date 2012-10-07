@@ -1,0 +1,9 @@
+difference()
+{
+	sphere(r=36/2,$fn=100);
+	difference(){
+		sphere(r=18-3,$fn=100);
+	translate([0,0,20])cube([30,30,20],center=true);
+	}
+	translate([0,0,-20])cube(40,center=true);
+}
