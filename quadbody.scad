@@ -91,6 +91,8 @@ difference()
 }
 }
 //translate([26,26,0])clippers();
+
+module base(){
 difference()
 {
 
@@ -103,4 +105,34 @@ translate([26,26,-10]){	translate([27,8,-1])cylinder(r=1.8,h=50);
 	translate([8,27,-1])cylinder(r=1.8,h=50);
 }
 
-}}}
+}}}}
+
+module top(){
+difference()
+{
+
+cube([52+35*2,52+35*2,15],center=true);
+
+for (ang = [0,90,180,270]){
+ rotate([0,0,ang]){
+translate([64,64,-1])rotate([0,0,45])cube([30,30,40],center=true);
+translate([26,26,-10]){	translate([27,8,-1])cylinder(r=1.8,h=50);
+	translate([8,27,-1])cylinder(r=1.8,h=50);
+}
+
+}}}}
+
+difference()
+{
+top();
+difference()
+{
+translate([0,0,4.5]) rotate([0,0,45]) cube([104,104,20],center=true);
+translate([74,0,0])cube(30,center=true);
+translate([-74,0,0])cube(30,center=true);
+
+}
+}
+
+
+
