@@ -116,23 +116,60 @@ cube([52+35*2,52+35*2,15],center=true);
 for (ang = [0,90,180,270]){
  rotate([0,0,ang]){
 translate([64,64,-1])rotate([0,0,45])cube([30,30,40],center=true);
-translate([26,26,-10]){	translate([27,8,-1])cylinder(r=1.8,h=50);
-	translate([8,27,-1])cylinder(r=1.8,h=50);
+translate([26,26,-10]){	translate([27,8,15])cylinder(r=1.8,h=50);
+	translate([8,27,15])cylinder(r=1.8,h=50);
+translate([27,8,-2.5-3])cylinder(r=4,h=20);
+	translate([8,27,-5.5])cylinder(r=4,h=20);
 }
 
 }}}}
 
+union()
+{
+
+
 difference()
 {
+
+
 top();
+
 difference()
 {
-translate([0,0,4.5]) rotate([0,0,45]) cube([104,104,20],center=true);
-translate([74,0,0])cube(30,center=true);
-translate([-74,0,0])cube(30,center=true);
+translate([0,0,4.5]) rotate([0,0,45]) cube([95,95,20],center=true);
+translate([67,0,0])cube(30,center=true);
+translate([-67,0,0])cube(30,center=true);
+}
+translate([0,0,9.5])cube([52,200,30],center=true);
+translate([0,-8,-5.5]){
+difference(){
+cube([100,16,8.5]);
+translate([0,-0.5,5])rotate([45,0,0])cube([100,10,10]);
+translate([0,-0.5,-10.5])rotate([45,0,0])cube([100,10,10]);
+}}
+translate([0,-4,0]){
+translate([-45/2,0,-10])cylinder(r=1,h=50);
+translate([45/2,0,-10])cylinder(r=1,h=50);
+translate([-45/2,45,-10])cylinder(r=1,h=50);
+translate([45/2,45,-10])cylinder(r=1,h=50);
+
+translate([6,-9,-10])cylinder(r=1.8,h=50);
+translate([6,-9-24,-10])cylinder(r=1.8,h=50);
+translate([6-19,-9,-10])cylinder(r=1.8,h=50);
+translate([6-19,-9-24,-10])cylinder(r=1.8,h=50);}
+
+
+translate([28,-9-12-4,-30])cylinder(r=5,h=50);
+/*translate([50,0,-30])cylinder(r=1,h=40);
+translate([0,50,-30])cylinder(r=1,h=40);
+translate([-50,0,-30])cylinder(r=1,h=40);
+translate([0,-50,-30])cylinder(r=1,h=40);*/
 
 }
+
+
+translate([-30,-61,-7])cube([60,20,4]);
+rotate([0,0,180])translate([-30,-61,-7])cube([60,18,4]);
+
+
 }
-
-
-
